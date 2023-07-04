@@ -1,0 +1,30 @@
+@import url(../root/global.css);
+
+.btn__default-blue,.btn__default{
+    width: 135px;
+    height: 45px;
+    font-size: 1rem;
+    /* font-family: Roboto; */
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+}
+
+.btn__default{
+    color: var(--brand200);
+    border: 1px solid var(--brand200);
+}
+.btn__default-blue{
+    background-color: var(--brand200);
+    color: var(--brand100);
+}
+.btn__chip{
+    font-size: 1rem;
+    border: none;
+    width: 93px;
+    height: 32px;
+    border: 1px solid var(--brand200);
+    color: var(--brand200);
+    background-color: transparent;
+    border-radius: 50px;
+}

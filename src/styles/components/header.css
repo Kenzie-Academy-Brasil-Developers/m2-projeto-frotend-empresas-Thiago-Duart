@@ -1,0 +1,14 @@
+.logo__kenzie{
+    width: 190px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  
+}
+header div{
+    display: flex;
+    gap: 16px;
+}

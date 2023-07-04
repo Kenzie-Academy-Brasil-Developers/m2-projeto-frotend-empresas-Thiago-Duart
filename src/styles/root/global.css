@@ -1,0 +1,8 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+:root {
+    --brand100:#FFFFFF ;
+    --brand200: #0000FF;
+    --gray100: #000000;
+}

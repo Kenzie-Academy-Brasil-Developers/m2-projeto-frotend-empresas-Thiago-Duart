@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<header>
+    <img class="logo__kenzie" src="./src/img/logo.svg" alt="Kezie Empresas">
+    <div> 
+        <button class="btn__default">Login</button>
+        <button class="btn__default-blue">Cadastro</button>
+    </div>
+</header>
+<main>
+    <div>
+        <aside>
+            <img class="aside__img" src="./src/img/index background.png" alt="">
+        </aside>
+        <section class="companies">
+            <select>
+                <option value="" disabled selected>Selecionar Setor</option>
+            </select>
+            <div class="companies__container">
+                <h2>Lista de Empresas</h2>
+                <ul class="companies__list">
+                    <li>
+                        <p>Empresas name</p>
+                        <button class="btn__chip">Setor</button>
+                    </li>
+                    <li>
+                        <p>Empresas name</p>
+                        <button class="btn__chip">Setor</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="./src/scripts/index/index.js"></script>
+</body>
+</html>
