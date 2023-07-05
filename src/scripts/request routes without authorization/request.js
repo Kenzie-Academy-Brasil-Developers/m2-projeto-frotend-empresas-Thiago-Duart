@@ -1,6 +1,7 @@
+
 const baseUrl = "http://localhost:3333";
 
-async function getCategoriesReadAll() {
+export async function getCategoriesReadAll() {
   const getCategories = await axios
     .get(`${baseUrl}/categories/readAll`)
     .then((res) => {
@@ -11,7 +12,7 @@ async function getCategoriesReadAll() {
   return getCategories;
 }
 
-async function companiesReadAll() {
+export async function getCompaniesReadAll() {
   const getCompanies = await axios
     .get(`${baseUrl}/companies/readAll`)
     .then((res) => {
@@ -22,7 +23,7 @@ async function companiesReadAll() {
   return getCompanies;
 }
 
-async function getCompaniesReadByCategory(categoryName) {
+export async function getCompaniesReadByCategory(categoryName) {
   const getcompaniesName = await axios
     .get(`${baseUrl}/companies/readByCategory/${categoryName}`)
     .then((res) => {
@@ -33,26 +34,30 @@ async function getCompaniesReadByCategory(categoryName) {
   return getcompaniesName;
 }
 
-async function postEmployeesCreate(accountCreateData) {
-  const postEmployees = await axios
-    .post(`${baseUrl}/employees/create`, accountCreateData)
+// colocar toasts depois
+export async function postEmployeesCreate(accountCreateData) {
+  const postEmployees = await axios.post(`${baseUrl}/employees/create`, accountCreateData)
     .then((response) => {
       const data = response.data;
-      return data;
+      //  location.replace('../../')
+       return data;
     })
-    .catch((error) => error.response.data.message);
+    .catch((error) => console.log(error.response.data.message));
 
   return postEmployees;
 }
 
-async function postLogin(accountLoginData) {
+export async function postLogin(accountLoginData) {
   const postLogin = await axios
     .post(`${baseUrl}/auth/login`, accountLoginData)
     .then((response) => {
       const data = response.data;
+      const dataLocal = JSON.stringify(data)
+      localStorage.setItem('@token',dataLocal)
+      //  location.replace('../../')
       return data;
     })
-    .catch((error) => error.response.data.message);
+    .catch((error) => console.log(error.response.data.message));
 
   return postLogin;
 }

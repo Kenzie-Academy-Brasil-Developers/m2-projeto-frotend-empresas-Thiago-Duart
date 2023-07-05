@@ -11,8 +11,8 @@
 <header>
     <img class="logo__kenzie" src="./src/img/logo.svg" alt="Kezie Empresas">
     <div> 
-        <button class="btn__default">Login</button>
-        <button class="btn__default-blue">Cadastro</button>
+        <button class="btn__default" id="btnLogin">Login</button>
+        <button class="btn__default-blue" id="btnCadastre">Cadastro</button>
     </div>
 </header>
 <main>
@@ -23,18 +23,11 @@
         <section class="companies">
             <select>
                 <option value="" disabled selected>Selecionar Setor</option>
+                <option value="all" data-uid="all">Todos</option>
             </select>
             <div class="companies__container">
                 <h2>Lista de Empresas</h2>
-                <ul class="companies__list">
-                    <li>
-                        <p>Empresas name</p>
-                        <button class="btn__chip">Setor</button>
-                    </li>
-                    <li>
-                        <p>Empresas name</p>
-                        <button class="btn__chip">Setor</button>
-                    </li>
+                <ul class="companies__list">             
                 </ul>
             </div>
         </section>
