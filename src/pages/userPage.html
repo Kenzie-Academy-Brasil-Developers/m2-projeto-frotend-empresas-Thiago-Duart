@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/userPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img class="logo__kenzie" src="../img/logo.svg" alt="Kezie Empresas">
+            <div> 
+                <button class="btn__default" id="logout">Logout</button>
+            </div>
+        </header>
+        <section class="user__content">
+            <h2 id="userName">Username</h2>
+            <p id="userEmail">meuemail@gmail.com</p>
+        </section>
+        <main>
+            <div  id="contract">
+                <div class="main__header"><h2 id="nameCompany">NomeCompanhia - NomeDepartamento</h2></div>
+                <section class="main__container">
+                </section>
+            </div>
+            <div class="displayUser" id="notHired" >
+                <h2>Você ainda não foi contratado</h2>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../scripts/userPage/userPage.js"></script>
+</body>
+</html>

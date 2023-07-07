@@ -54,7 +54,6 @@ export async function postLogin(accountLoginData) {
       const data = response.data;
       const dataLocal = JSON.stringify(data)
       localStorage.setItem('@token',dataLocal)
-      //  location.replace('../../')
       return data;
     })
     .catch((error) => console.log(error.response.data.message));

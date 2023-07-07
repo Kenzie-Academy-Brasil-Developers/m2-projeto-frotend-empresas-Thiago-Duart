@@ -1,4 +1,12 @@
+// import { log } from "console"
 import { postLogin } from "../request routes without authorization/request.js"
+function authentication(){
+    const token = JSON.parse(localStorage.getItem('@token'))
+    if(token){
+        location.replace('./userPage.html')
+    }
+}
+authentication()
 {
 const home = document.querySelector('#home')
 home.addEventListener('click',()=>{
@@ -21,7 +29,12 @@ function login(){
         inputs.forEach(input=>{
                 contentLogin[input.name] = input.value
         })
-       await postLogin(contentLogin)
+       const loginUser = await postLogin(contentLogin)
+       if(loginUser.isAdm){
+        console.log('mover depois')
+       }else{
+        location.replace('./userPage.html')
+       }
     })
 }
 login()

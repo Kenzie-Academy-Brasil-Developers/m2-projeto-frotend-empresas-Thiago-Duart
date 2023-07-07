@@ -1,5 +1,8 @@
 @import url(./reset.css);
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+body{
+    font-family: 'IBM Plex Sans', sans-serif;;
+}
 .container{
     padding: 0 20%;
     }

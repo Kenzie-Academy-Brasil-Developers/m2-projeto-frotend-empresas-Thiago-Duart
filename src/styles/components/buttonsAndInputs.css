@@ -8,6 +8,7 @@
     font-weight: 700;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .btn__default{
@@ -27,6 +28,7 @@
     color: var(--brand200);
     background-color: transparent;
     border-radius: 50px;
+    cursor: pointer;
 }
 input{
     height: 2.8rem;
