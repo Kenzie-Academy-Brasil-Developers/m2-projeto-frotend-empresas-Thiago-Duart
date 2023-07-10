@@ -31,7 +31,7 @@ function login(){
         })
        const loginUser = await postLogin(contentLogin)
        if(loginUser.isAdm){
-        console.log('mover depois')
+        location.replace('./adminPage.html')
        }else{
         location.replace('./userPage.html')
        }

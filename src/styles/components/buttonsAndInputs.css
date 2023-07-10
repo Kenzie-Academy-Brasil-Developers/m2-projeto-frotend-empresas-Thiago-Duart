@@ -1,6 +1,6 @@
 @import url(../root/global.css);
 
-.btn__default-blue,.btn__default{
+.btn__default-blue,.btn__default,.btn__modal-red,.btn__modal-green{
     width: 135px;
     height: 45px;
     font-size: 1rem;
@@ -10,14 +10,29 @@
     border: none;
     cursor: pointer;
 }
+.btn__modal-red{
+    border: 1px solid var(--red100);
+    color: var(--red100);
+}
+.btn__modal-green{
+    color: var(--brand100);
+    background-color: var(--green100);
+}
 
 .btn__default{
     color: var(--brand200);
     border: 1px solid var(--brand200);
 }
+.btn__default:hover{
+    background-color: var(--brand200);
+    color: var(--brand100);
+}
 .btn__default-blue{
     background-color: var(--brand200);
     color: var(--brand100);
+}
+.btn__default-blue:hover{
+    background-color: rgb(3, 3, 172);
 }
 .btn__chip{
     font-size: 1rem;

@@ -12,3 +12,16 @@ header div{
     display: flex;
     gap: 16px;
 }
+.logout__container{
+ position: absolute;
+ top: 90px;
+ font-size: 1.125rem;
+ font-weight: bolder;
+ cursor: pointer;
+}
+.logout__container:hover{
+    color: red;
+}
+.displayUser{
+    display: none !important;
+}

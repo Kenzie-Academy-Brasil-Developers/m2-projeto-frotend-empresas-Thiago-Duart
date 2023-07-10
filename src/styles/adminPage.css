@@ -1,0 +1,83 @@
+@import url(./components/buttonsAndInputs.css);
+@import url(./components/header.css);
+
+
+.company__select{
+    display: flex;
+    justify-content: end;
+    margin-top: 5%;
+}
+.company__select select{
+    border: none;
+    width: 30%;
+    height: 60px;
+    background-color: var(--brand200);
+    color: var(--brand100);
+    padding: 0 1.25rem;
+    font-size: 1.125rem;
+}
+.company__select select option{
+    background-color: var(--brand200);
+}
+.departments__container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+}
+.departments__handle{
+    display: flex;
+    justify-content: space-between;
+}
+.departments__handle h2{
+    font-size: 28px;
+    font-weight: 700;
+}
+.departments{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    max-height: 30vh;
+    overflow-y: scroll;
+    justify-content: center;
+    padding: 20px 0;
+    box-shadow:0 0  10px rgba(0, 0, 0, 0.9);
+}
+.departments__content{
+    border: 1px solid var(--brand200);
+    width: 350px;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 26px;
+}
+.departments__content div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.departments__content div h2{
+    font-size: 18px;
+    font-weight: 700;
+}
+.departments__content div p{
+    font-size: 18px
+}
+
+
+.departments__content div svg{
+    height: 25px;
+    width: 100%;
+}
+.blue{
+    color: blue;
+} 
+.yellow{
+    color:rgb(224, 173, 6);
+} 
+.red{
+    color: red;
+}
+.departmentHire{
+    cursor: pointer;
+}

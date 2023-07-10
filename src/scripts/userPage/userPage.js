@@ -1,3 +1,4 @@
+// import { setTimeout } from "timers"
 import { getDepartmentsReadById, getEmployeesProfile } from "../request for routes Employees/request.js"
 
 function authentication(){
@@ -49,4 +50,21 @@ function notHired(){
         contractEmployees.classList.add('displayUser')
         notHired.classList.remove('displayUser')
 }
+function logout(){
+    const btnLogout = document.querySelector('#logout')
+    const textLogout = document.querySelector('.logout__container')
+    btnLogout.addEventListener('click', ()=>{
+        if(textLogout.classList.contains('displayUser')){
+            textLogout.classList.remove('displayUser')
+            setTimeout(()=>{textLogout.classList.add('displayUser')},4000)
+        }else{
+            textLogout.classList.add('displayUser')
+        }
+    })
+    textLogout.addEventListener('click',()=>{
+        localStorage.clear()
+        location.reload()
+    })
+}
+logout()
 await companyDepartmentAndEmployees()

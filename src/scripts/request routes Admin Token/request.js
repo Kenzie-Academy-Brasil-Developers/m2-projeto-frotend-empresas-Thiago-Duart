@@ -1,10 +1,9 @@
-export // const { get } = require("request");
 
 // lembrar de troca os tokens 
-const tokenAdm = {
-	authToken:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg2NzY0NzksImV4cCI6MTcyMDIxMjQ3OSwic3ViIjoiMTY4NDFhMWYtMzQzNi00NDY1LWFmODMtZGFhNTc4YWVkZDk4In0.DxkKb4pmvh0B89HAKkKdFOI4G1imdRv9pR842ga9deM",
-	isAdm: true
-}
+// const tokenAdm = {
+// 	authToken:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg2NzY0NzksImV4cCI6MTcyMDIxMjQ3OSwic3ViIjoiMTY4NDFhMWYtMzQzNi00NDY1LWFmODMtZGFhNTc4YWVkZDk4In0.DxkKb4pmvh0B89HAKkKdFOI4G1imdRv9pR842ga9deM",
+// 	isAdm: true
+// }
 
 const baseUrl = "http://localhost:3333";
 
@@ -59,7 +58,7 @@ export async function getDepartmentsReadAll() {
 
   return getdepartments;
 }
-
+// console.log(await getDepartmentsReadAll())
 // Rota responsável por listar todos os departamentos de uma empresa, o ID da empresa deve ser informado na URL da requisição
 export async function getDepartmentsReadByCompany(companyId) {
     const token = JSON.parse(localStorage.getItem('@token'))
@@ -98,10 +97,6 @@ export async function patchUpdateEmployee(employeeId,employeeContent) {
     });
   return getdepartmentsById;
 }
-const employee = {
-    name: "troquei",
-    email: "onome@mail.com"
-}
 // console.log(await patchUpdateEmployee('d98d8568-619e-46d4-8915-a45c3edbe55f',employee))
 
 export async function patchHireEmployee(employeeId,departmentId) {
@@ -125,14 +120,16 @@ export async function patchHireEmployee(employeeId,departmentId) {
 const departament = {
     department_id: "7e299dc9-991f-40aa-b60a-0e8fd9a90af5"
 }
-await patchHireEmployee("183661d3-02c9-4fb0-86ef-97cf58f2e392",departament)
+// await patchHireEmployee("183661d3-02c9-4fb0-86ef-97cf58f2e392",departament)
 
 // Rota responsável por demitir um funcionário de um departamento
 export async function patchDismissEmployee(employeeId) {
+  const token = JSON.parse(localStorage.getItem('@token'))
  const tokenTeste = { headers: {
   "Content-Type": "application/json",
   Authorization: `Bearer ${token.authToken}`,
 },}
+
   // const token = JSON.parse(localStorage.getItem('@token'))
   const getHireEmployee = await axios.patch(`${baseUrl}/employees/dismissEmployee/${employeeId}`,{},tokenTeste)
 .then((res) => {
@@ -146,6 +143,7 @@ return getHireEmployee;
 
 // Rota responsável por atualizar a descrição de um departamento
 export async function patchDepartmentsUpdate(departmentId,departamentUpdate) {
+  const token = JSON.parse(localStorage.getItem('@token'))
   const tokenTeste = { headers: {
    "Content-Type": "application/json",
    Authorization: `Bearer ${token.authToken}`,
@@ -160,13 +158,28 @@ export async function patchDepartmentsUpdate(departmentId,departamentUpdate) {
  return getHireEmployee;
  }
 // Rota responsável por deletar um departamento
- export async function deleteDepartments(departmentId) {
+ export async function deleteDeleteDepartments(departmentId) {
+  const token = JSON.parse(localStorage.getItem('@token'))
   const tokenTeste = { headers: {
    "Content-Type": "application/json",
    Authorization: `Bearer ${token.authToken}`,
  },}
-   // const token = JSON.parse(localStorage.getItem('@token'))
-   const getHireEmployee = await axios.patch(`${baseUrl}/departments/delete/${departmentId}`,{},tokenTeste)
+   const getHireEmployee = await axios.delete(`${baseUrl}/departments/delete/${departmentId}`,tokenTeste)
+ .then((res) => {
+   const response = res.data
+   return response
+   });
+ 
+ return getHireEmployee;
+ }
+//Rota responsável por cadastrar um novo departamento
+ export async function createDepartment(obj) {
+  const token = JSON.parse(localStorage.getItem('@token'))
+  const tokenTeste = { headers: {
+   "Content-Type": "application/json",
+   Authorization: `Bearer ${token.authToken}`,
+ },}
+   const getHireEmployee = await axios.post(`${baseUrl}/departments/create`,obj,tokenTeste)
  .then((res) => {
    const response = res.data
    return response
