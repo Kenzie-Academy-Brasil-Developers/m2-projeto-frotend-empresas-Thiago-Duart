@@ -1,4 +1,4 @@
-dialog {
+.HireModal {
     width: 50%;
     padding: 30px;
 }
@@ -14,24 +14,25 @@ dialog {
     font-weight: 600;
 }
 
-dialog h2 {
+.HireModal h2 {
     font-size: 1.375rem;
     margin-bottom: 12px;
     font-weight: 600;
 }
 
-dialog p {
+.HireModal p {
     font-size: 1.225rem;
     margin-bottom: 16px;
     font-weight: 600;
 
 }
 
-dialog select {
+.HireModal select {
     width: 80%;
     height: 55px;
     padding: 0 1.325rem;
     font-size: 1.125rem;
+    margin-right: 16px;
 }
 
 .btn__modal-green {

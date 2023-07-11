@@ -54,7 +54,7 @@ export function editDepartment() {
         await patchDepartmentsUpdate(departmentId, departamentContent);
         toast("Departamento editado com sucesso", "green");
         modalEdit.close();
-        await renderDepartments(await getDepartmentsReadAll());
+        location.reload()
         editDepartment();
         modalDeleteDepartments();
         openModalHireEmployee();

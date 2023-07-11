@@ -6,11 +6,13 @@ import {
 
 function authentication() {
   const token = JSON.parse(localStorage.getItem("@token"));
-  if (!token) {
+  console.log(token.isAdm)
+if (token.isAdm) {
+  console.log('token')
+  location.replace("./adminPage.html");
+}else if (!token) {
     location.replace("../../");
-  } else if (token.isAdmin) {
-    location.replace("./adminPage.html");
-  }
+}
 }
 authentication();
 

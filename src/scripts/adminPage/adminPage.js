@@ -81,7 +81,7 @@ async function selectSector() {
 export async function renderDepartments(content, nome) {
   const departments = content;
   const departamentContainer = document.querySelector("#department");
-  departamentContainer.innerHTML = "";
+  departamentContainer.innerHTML = ""
   if (departments.length === 0) {
     departamentContainer.insertAdjacentHTML(
       "beforeend",

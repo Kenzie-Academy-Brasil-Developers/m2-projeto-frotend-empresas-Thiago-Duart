@@ -46,8 +46,8 @@
 .btn__chip {
     font-size: 1rem;
     border: none;
-    width: 93px;
-    height: 32px;
+    width: 126px;
+    height: 36px;
     border: 1px solid var(--brand200);
     color: var(--brand200);
     background-color: transparent;
