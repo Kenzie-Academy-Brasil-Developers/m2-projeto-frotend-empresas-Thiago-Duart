@@ -1,20 +1,14 @@
-
-// lembrar de troca os tokens 
-// const tokenAdm = {
-// 	authToken:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg2NzY0NzksImV4cCI6MTcyMDIxMjQ3OSwic3ViIjoiMTY4NDFhMWYtMzQzNi00NDY1LWFmODMtZGFhNTc4YWVkZDk4In0.DxkKb4pmvh0B89HAKkKdFOI4G1imdRv9pR842ga9deM",
-// 	isAdm: true
-// }
-
 const baseUrl = "http://localhost:3333";
 
 //Rota responsável por listar todos os funcionários cadastrados
 export async function getEmployeesReadAll() {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getEmployees = await axios.get(`${baseUrl}/employees/readAll`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getEmployees = await axios
+    .get(`${baseUrl}/employees/readAll`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;
@@ -24,15 +18,15 @@ export async function getEmployeesReadAll() {
   return getEmployees;
 }
 
-// console.log('funcionarios',await getEmployeesReadAll())
 // Rota responsável por listar todos os funcionários que ainda não foram contratados para nenhum departamento
 export async function getEmployeesOutOfWork() {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getOutOfWork = await axios.get(`${baseUrl}/employees/outOfWork`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getOutOfWork = await axios
+    .get(`${baseUrl}/employees/outOfWork`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;
@@ -44,12 +38,13 @@ export async function getEmployeesOutOfWork() {
 
 // Rota responsável por listar todos os departamentos cadastrados
 export async function getDepartmentsReadAll() {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartments = await axios.get(`${baseUrl}/departments/readAll`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/departments/readAll`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;
@@ -58,15 +53,16 @@ export async function getDepartmentsReadAll() {
 
   return getdepartments;
 }
-// console.log(await getDepartmentsReadAll())
+
 // Rota responsável por listar todos os departamentos de uma empresa, o ID da empresa deve ser informado na URL da requisição
 export async function getDepartmentsReadByCompany(companyId) {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartmentsById = await axios.get(`${baseUrl}/departments/readByCompany/${companyId}`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartmentsById = await axios
+    .get(`${baseUrl}/departments/readByCompany/${companyId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;
@@ -75,115 +71,155 @@ export async function getDepartmentsReadByCompany(companyId) {
 
   return getdepartmentsById;
 }
-// console.log('departamentos que contratam',await getDepartmentsReadAll('eef95061-062a-4fa1-a28f-fd6f781ce520'))
-// const teste = {
-//   headers: {
-//   "Content-Type": "application/json",
-//   Authorization: `Bearer ${token.authToken}`,
-// },}
 
 // Rota responsável por atualizar as informações de um funcionário
-export async function patchUpdateEmployee(employeeId,employeeContent) {
-  const teste = {
+export async function patchUpdateEmployee(employeeId, employeeContent) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
     headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token.authToken}`,
-  },}
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartmentsById = await axios.patch(`${baseUrl}/employees/updateEmployee/${employeeId}`,employeeContent,teste)
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
+  const requestPatch = await axios
+    .patch(
+      `${baseUrl}/employees/updateEmployee/${employeeId}`,
+      employeeContent,
+      configHeader
+    )
     .then((res) => {
       const data = res.data;
       return data;
     });
-  return getdepartmentsById;
+  return requestPatch;
 }
 // console.log(await patchUpdateEmployee('d98d8568-619e-46d4-8915-a45c3edbe55f',employee))
 
-export async function patchHireEmployee(employeeId,departmentId) {
-    const teste = {
-        headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${tokenAdm.authToken}`,
+export async function patchHireEmployee(employeeId, departmentId) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
     },
-} 
-    const departament = JSON.stringify(departmentId)
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getHireEmployee = await axios.patch(`${baseUrl}/employees/hireEmployee/${employeeId}`,departament,teste)
-.then((res) => {
-    const response = res.data
-    return response
+  };
+  const departament = JSON.stringify(departmentId);
+  const requestPatch = await axios
+    .patch(
+      `${baseUrl}/employees/hireEmployee/${employeeId}`,
+      departament,
+      configHeader
+    )
+    .then((res) => {
+      const response = res.data;
+      return response;
     });
 
-  return getHireEmployee;
+  return requestPatch;
 }
-
-const departament = {
-    department_id: "7e299dc9-991f-40aa-b60a-0e8fd9a90af5"
-}
-// await patchHireEmployee("183661d3-02c9-4fb0-86ef-97cf58f2e392",departament)
 
 // Rota responsável por demitir um funcionário de um departamento
 export async function patchDismissEmployee(employeeId) {
-  const token = JSON.parse(localStorage.getItem('@token'))
- const tokenTeste = { headers: {
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${token.authToken}`,
-},}
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
 
   // const token = JSON.parse(localStorage.getItem('@token'))
-  const getHireEmployee = await axios.patch(`${baseUrl}/employees/dismissEmployee/${employeeId}`,{},tokenTeste)
-.then((res) => {
-  const response = res.data
-  return response
-  });
+  const requestPatch = await axios
+    .patch(
+      `${baseUrl}/employees/dismissEmployee/${employeeId}`,
+      {},
+      configHeader
+    )
+    .then((res) => {
+      const response = res.data;
+      return response;
+    });
 
-return getHireEmployee;
+  return requestPatch;
 }
-// console.log(await patchDismissEmployee("3679c646-3689-4e67-ba9e-4e635b6b9908"))
 
 // Rota responsável por atualizar a descrição de um departamento
-export async function patchDepartmentsUpdate(departmentId,departamentUpdate) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-  const tokenTeste = { headers: {
-   "Content-Type": "application/json",
-   Authorization: `Bearer ${token.authToken}`,
- },}
-   // const token = JSON.parse(localStorage.getItem('@token'))
-   const getHireEmployee = await axios.patch(`${baseUrl}/departments/update/${departmentId}`,departamentUpdate,tokenTeste)
- .then((res) => {
-   const response = res.data
-   return response
-   });
- 
- return getHireEmployee;
- }
+export async function patchDepartmentsUpdate(departmentId, departamentUpdate) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
+
+  const requestPatch = await axios
+    .patch(
+      `${baseUrl}/departments/update/${departmentId}`,
+      departamentUpdate,
+      configHeader
+    )
+    .then((res) => {
+      const response = res.data;
+      return response;
+    });
+
+  return requestPatch;
+}
+
 // Rota responsável por deletar um departamento
- export async function deleteDeleteDepartments(departmentId) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-  const tokenTeste = { headers: {
-   "Content-Type": "application/json",
-   Authorization: `Bearer ${token.authToken}`,
- },}
-   const getHireEmployee = await axios.delete(`${baseUrl}/departments/delete/${departmentId}`,tokenTeste)
- .then((res) => {
-   const response = res.data
-   return response
-   });
- 
- return getHireEmployee;
- }
+export async function deleteDeleteDepartments(departmentId) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
+  const requestDelete = await axios
+    .delete(`${baseUrl}/departments/delete/${departmentId}`, configHeader)
+    .then((res) => {
+      const response = res.data;
+      return response;
+    });
+
+  return requestDelete;
+}
+
+//  Rota responsável por deletar um departamento
+export async function deleteDeleteUser(userId) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
+  const requestDelete = await axios
+    .delete(`${baseUrl}/employees/deleteEmployee/${userId}`, configHeader)
+    .then((res) => {
+      const response = res.data;
+      return response;
+    });
+
+  return requestDelete;
+}
+
 //Rota responsável por cadastrar um novo departamento
- export async function createDepartment(obj) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-  const tokenTeste = { headers: {
-   "Content-Type": "application/json",
-   Authorization: `Bearer ${token.authToken}`,
- },}
-   const getHireEmployee = await axios.post(`${baseUrl}/departments/create`,obj,tokenTeste)
- .then((res) => {
-   const response = res.data
-   return response
-   });
- 
- return getHireEmployee;
- }
+export async function createDepartment(obj) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const configHeader = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token.authToken}`,
+    },
+  };
+  const requestCreateDepartment = await axios
+    .post(`${baseUrl}/departments/create`, obj, configHeader)
+    .then((res) => {
+      const response = res.data;
+      return response;
+    });
+
+  return requestCreateDepartment;
+}

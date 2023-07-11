@@ -1,21 +1,22 @@
-
 @import url(./components/buttonsAndInputs.css);
 @import url(./components/header.css);
 
-.user__content{
+.user__content {
     padding: 2.875rem 1.75rem;
 }
+
 .user__content h2 {
     font-size: 1.75rem;
     font-weight: 700;
     padding: 0 0 8px 0;
 }
+
 .user__content p {
     font-size: 1rem;
     font-weight: 600;
 }
 
-.main__container{
+.main__container {
     padding: 18px 26px;
     display: flex;
     flex-wrap: wrap;
@@ -23,15 +24,17 @@
     gap: 36px;
     overflow-y: scroll;
 }
-.main__header{
- text-align: center;
- padding: 26px;
- font-size: 1.75rem;
- font-weight: 700;
- color: var(--brand100);
- background-color: var(--brand200);
+
+.main__header {
+    text-align: center;
+    padding: 26px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--brand100);
+    background-color: var(--brand200);
 }
-.main__content{
+
+.main__content {
     border: 1px solid var(--brand200);
     width: 15.625rem;
     height: 4.8rem;
@@ -39,7 +42,8 @@
     font-size: 1.2rem;
     font-weight: 600;
 }
-#notHired{
+
+#notHired {
     display: flex;
     height: 200px;
     align-items: center;
@@ -47,4 +51,3 @@
     font-size: 1.75rem;
     font-weight: 700;
 }
-

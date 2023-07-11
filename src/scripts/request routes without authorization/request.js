@@ -1,4 +1,3 @@
-
 const baseUrl = "http://localhost:3333";
 
 export async function getCategoriesReadAll() {
@@ -36,11 +35,11 @@ export async function getCompaniesReadByCategory(categoryName) {
 
 // colocar toasts depois
 export async function postEmployeesCreate(accountCreateData) {
-  const postEmployees = await axios.post(`${baseUrl}/employees/create`, accountCreateData)
+  const postEmployees = await axios
+    .post(`${baseUrl}/employees/create`, accountCreateData)
     .then((response) => {
       const data = response.data;
-      //  location.replace('../../')
-       return data;
+      return data;
     })
     .catch((error) => console.log(error.response.data.message));
 
@@ -52,8 +51,8 @@ export async function postLogin(accountLoginData) {
     .post(`${baseUrl}/auth/login`, accountLoginData)
     .then((response) => {
       const data = response.data;
-      const dataLocal = JSON.stringify(data)
-      localStorage.setItem('@token',dataLocal)
+      const dataLocal = JSON.stringify(data);
+      localStorage.setItem("@token", dataLocal);
       return data;
     })
     .catch((error) => console.log(error.response.data.message));

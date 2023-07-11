@@ -1,7 +1,7 @@
 @import url(./components/buttonsAndInputs.css);
 @import url(./components/header.css);
 
-section{
+section {
     height: 91.8vh;
     background-image: url(../img/background.png);
     background-size: 100% 100%;
@@ -10,9 +10,10 @@ section{
     display: flex;
     justify-content: center;
 }
+
 section div {
     margin-top: 5%;
-    background-color: rgb(255, 255, 255,0.9);
+    background-color: rgb(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     width: 26%;
@@ -20,21 +21,24 @@ section div {
     padding: 2.25rem;
     gap: 20px;
 }
-section div h2{
+
+section div h2 {
     font-size: 36px;
     font-weight: 700;
 }
 
-section div p{
+section div p {
     font-size: 18px;
     font-weight: 500;
 }
-section div form{
+
+section div form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     text-align: center;
 }
-.btn-modfier{
+
+.btn-modfier {
     width: 100%;
 }

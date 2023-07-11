@@ -1,27 +1,32 @@
-.logo__kenzie{
+.logo__kenzie {
     width: 190px;
 }
-header{
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-  
+
 }
-header div{
+
+header div {
     display: flex;
     gap: 16px;
 }
-.logout__container{
- position: absolute;
- top: 90px;
- font-size: 1.125rem;
- font-weight: bolder;
- cursor: pointer;
+
+.logout__container {
+    position: absolute;
+    top: 90px;
+    font-size: 1.125rem;
+    font-weight: bolder;
+    cursor: pointer;
 }
-.logout__container:hover{
+
+.logout__container:hover {
     color: red;
 }
-.displayUser{
+
+.displayUser {
     display: none !important;
 }

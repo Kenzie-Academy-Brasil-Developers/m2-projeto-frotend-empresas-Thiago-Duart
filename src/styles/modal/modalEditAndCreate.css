@@ -1,39 +1,47 @@
-dialog{
+dialog {
     width: 30%;
-  
+
 }
-dialog div{
+
+dialog div {
     display: flex;
     justify-content: space-between;
 }
-dialog h1{
+
+dialog h1 {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 26px;
 }
-dialog form{
+
+dialog form {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-dialog form select{
+
+dialog form select {
     width: 100%;
 }
-dialog form button{
+
+dialog form button {
     width: 100% !important;
 }
 
-.modal__confirme h2{
+.modal__confirme h2 {
     text-align: center;
     text-align-last: center;
 }
-.modal__confirme svg{
+
+.modal__confirme svg {
     width: 50px;
 }
-.modal__confirme-container{
-    width: 400px;    
+
+.modal__confirme-container {
+    width: 400px;
 }
-.modal__confirme-container button{
+
+.modal__confirme-container button {
     margin-top: 36px;
     width: 100%;
     background-color: var(--red100);

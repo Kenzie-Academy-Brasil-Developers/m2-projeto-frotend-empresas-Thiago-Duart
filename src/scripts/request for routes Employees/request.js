@@ -5,12 +5,13 @@ const baseUrl = "http://localhost:3333";
 // }
 // Rota responsável para listar as informações do usuário logado
 export async function getEmployeesProfile() {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartments = await axios.get(`${baseUrl}/employees/profile`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/employees/profile`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;
@@ -20,17 +21,17 @@ export async function getEmployeesProfile() {
   return getdepartments;
 }
 
-
 export async function getCompaniesReadById(companyId) {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartments = await axios.get(`${baseUrl}/companies/readById/${companyId}`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/companies/readById/${companyId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
-    console.log('e aqui')
+      console.log("e aqui");
       const data = res.data;
       return data;
     });
@@ -38,63 +39,65 @@ export async function getCompaniesReadById(companyId) {
   return getdepartments;
 }
 export async function getEmployeesCompaniesReadById(companyId) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-const getdepartments = await axios.get(`${baseUrl}/companies/readById/${companyId}`,{
-          headers: {
-               "Content-Type": "application/json",
-              Authorization: `Bearer ${token.authToken}`,
-            },
-  })
-  .then((res) => {
-    const data = res.data.employees;
-    return data;
-  });
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/companies/readById/${companyId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
+    })
+    .then((res) => {
+      const data = res.data.employees;
+      return data;
+    });
 
-return getdepartments;
+  return getdepartments;
 }
 export async function getDepartmentsCompaniesReadById(companyId) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-const getdepartments = await axios.get(`${baseUrl}/companies/readById/${companyId}`,{
-          headers: {
-               "Content-Type": "application/json",
-              Authorization: `Bearer ${token.authToken}`,
-            },
-  })
-  .then((res) => {
-    console.log('e aqui')
-    const data = res.data.departments    ;
-    return data;
-  });
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/companies/readById/${companyId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
+    })
+    .then((res) => {
+      console.log("e aqui");
+      const data = res.data.departments;
+      return data;
+    });
 
-return getdepartments;
+  return getdepartments;
 }
 export async function getNameCompaniesReadById(companyId) {
-  const token = JSON.parse(localStorage.getItem('@token'))
-const getdepartments = await axios.get(`${baseUrl}/companies/readById/${companyId}`,{
-          headers: {
-               "Content-Type": "application/json",
-              Authorization: `Bearer ${token.authToken}`,
-            },
-  })
-  .then((res) => {
-    const data = res.data.name;
-    return data;
-  })
- 
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/companies/readById/${companyId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
+    })
+    .then((res) => {
+      const data = res.data.name;
+      return data;
+    });
 
-return getdepartments;
+  return getdepartments;
 }
 
 // console.log(await getCompaniesReadById("eef95061-062a-4fa1-a28f-fd6f781ce520"))
 
-
-export async function  getDepartmentsReadById(departmentId) {
-    const token = JSON.parse(localStorage.getItem('@token'))
-  const getdepartments = await axios.get(`${baseUrl}/departments/readById/${departmentId}`,{
-            headers: {
-                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token.authToken}`,
-              },
+export async function getDepartmentsReadById(departmentId) {
+  const token = JSON.parse(localStorage.getItem("@token"));
+  const getdepartments = await axios
+    .get(`${baseUrl}/departments/readById/${departmentId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.authToken}`,
+      },
     })
     .then((res) => {
       const data = res.data;

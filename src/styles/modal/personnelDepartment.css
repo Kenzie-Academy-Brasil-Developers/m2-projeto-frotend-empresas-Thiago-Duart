@@ -1,79 +1,94 @@
-dialog{
+dialog {
     width: 50%;
     padding: 30px;
 }
-.dialog__header{
+
+.dialog__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 36px;
 }
-.dialog__header  h1{
+
+.dialog__header h1 {
     font-size: 2rem;
     font-weight: 600;
 }
+
 dialog h2 {
     font-size: 1.375rem;
     margin-bottom: 12px;
     font-weight: 600;
 }
+
 dialog p {
     font-size: 1.225rem;
     margin-bottom: 16px;
     font-weight: 600;
 
 }
-dialog select{
+
+dialog select {
     width: 80%;
     height: 55px;
     padding: 0 1.325rem;
     font-size: 1.125rem;
 }
-.btn__modal-green{
+
+.btn__modal-green {
     height: 55px;
     width: 140px;
 }
-.user__container{
+
+.user__container {
     margin-top: 50px;
     display: flex;
     flex-wrap: nowrap;
     gap: 18px;
-    overflow-x:scroll ;
-    background-color:  #F4F4F4;
+    overflow-x: scroll;
+    background-color: #F4F4F4;
     padding: 26px 26px 0;
     scrollbar-color: black;
 }
-.user__contracted{
+
+.user__contracted {
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 18px;
     background-color: var(--brand100);
-    border-bottom:2px solid var(--brand200);
+    border-bottom: 2px solid var(--brand200);
     padding: 1.25rem 2.25rem 1rem;
     margin-bottom: 10px;
 }
-.user__contracted h2{
+
+.user__contracted h2 {
     font-size: 1.625rem;
     margin-bottom: 26px;
 }
-.user__contracted p{
+
+.user__contracted p {
     font-size: 1.3rem;
     font-weight: 500;
 }
-.btn__modal-red{
+
+.btn__modal-red {
     width: 230px;
 }
+
 .user__container::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .user__container::-webkit-scrollbar {
     width: 6px;
     background: white;
 }
+
 .user__container::-webkit-scrollbar-thumb {
     background: var(--brand200);
 }
-.user__contracted div{
+
+.user__contracted div {
     display: flex;
     flex-direction: column;
-} 
+}

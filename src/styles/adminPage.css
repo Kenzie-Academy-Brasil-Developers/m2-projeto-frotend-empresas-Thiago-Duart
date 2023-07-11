@@ -2,12 +2,13 @@
 @import url(./components/header.css);
 
 
-.company__select{
+.company__select {
     display: flex;
     justify-content: end;
     margin-top: 5%;
 }
-.company__select select{
+
+.company__select select {
     border: none;
     width: 30%;
     height: 60px;
@@ -16,23 +17,28 @@
     padding: 0 1.25rem;
     font-size: 1.125rem;
 }
-.company__select select option{
+
+.company__select select option {
     background-color: var(--brand200);
 }
-.departments__container{
+
+.departments__container {
     display: flex;
     flex-direction: column;
     margin-top: 3%;
 }
-.departments__handle{
+
+.departments__handle {
     display: flex;
     justify-content: space-between;
 }
-.departments__handle h2{
+
+.departments__handle h2 {
     font-size: 28px;
     font-weight: 700;
 }
-.departments{
+
+.departments {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -41,43 +47,54 @@
     overflow-y: scroll;
     justify-content: center;
     padding: 20px 0;
-    box-shadow:0 0  10px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
-.departments__content{
+
+.departments__content {
     border: 1px solid var(--brand200);
-    width: 350px;
+    width: fit-content;
     height: 160px;
     display: flex;
     justify-content: space-between;
     padding: 16px 26px;
+    word-wrap: break-word;
 }
-.departments__content div{
+
+.departments__content div {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.departments__content div h2{
+
+.departments__content div h2 {
     font-size: 18px;
     font-weight: 700;
 }
-.departments__content div p{
-    font-size: 18px
+
+.departments__content div p {
+    font-size: 18px;
+    width: 200px;
+    text-align: justify;
 }
 
 
-.departments__content div svg{
+.departments__content div svg {
     height: 25px;
     width: 100%;
 }
-.blue{
+
+.blue {
     color: blue;
-} 
-.yellow{
-    color:rgb(224, 173, 6);
-} 
-.red{
+}
+
+.yellow {
+    color: rgb(224, 173, 6);
+}
+
+.red {
     color: red;
 }
-.departmentHire{
+
+.departmentHire {
     cursor: pointer;
 }
