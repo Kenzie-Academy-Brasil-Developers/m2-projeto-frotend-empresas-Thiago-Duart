@@ -6,15 +6,15 @@ import {
 
 function authentication() {
   const token = JSON.parse(localStorage.getItem("@token"));
-  console.log(token.isAdm)
-if (token.isAdm) {
-  console.log('token')
-  location.replace("./adminPage.html");
-}else if (!token) {
-    location.replace("../../");
+  if(token){
+    console.log(token)
+    if(token.isAdm){
+      location.replace('./adminPage.html')
+    }
+  }else{
+    location.replace('../../')
+  }
 }
-}
-authentication();
 
 async function companyDepartmentAndEmployees() {
   const profileEmployee = await getEmployeesProfile();
@@ -77,5 +77,6 @@ function logout() {
     location.reload();
   });
 }
+authentication(); 
 logout();
 await companyDepartmentAndEmployees();

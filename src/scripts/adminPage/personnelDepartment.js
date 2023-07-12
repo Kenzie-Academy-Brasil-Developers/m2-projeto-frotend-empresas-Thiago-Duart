@@ -6,8 +6,13 @@ import {
 } from "../request routes Admin Token/request.js";
 function authentication() {
   const token = JSON.parse(localStorage.getItem("@token"));
-  if (!token) {
-    location.replace("../../");
+  if (token) {
+    console.log(token)
+    if(!token.isAdm){
+      location.replace('./userPage.html')
+    }
+  }else{
+    location.replace('../../')
   }
 }
 authentication();
